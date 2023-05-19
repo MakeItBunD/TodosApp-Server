@@ -1,0 +1,22 @@
+{
+  "root": true,
+  "plugins": ["@typescript-eslint", "import"],
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript"
+],
+  "parserOptions": {
+      "parser": "@typescript-eslint/parser",
+      "project": "./tsconfig.json",
+      "sourceType": "module"
+  },
+  "rules": {
+      "no-multiple-empty-lines": "error",
+      "indent": ["error", 2],
+      "linebreak-style": 0,
+      "@typescript-eslint/no-var-requires": 0,
+      "import/extensions": ["error", "never"],
+      "import/no-extraneous-dependencies": "off"
+  }
+}
