@@ -44,11 +44,6 @@ class TodoController {
       if (!Todo.findById(todoId)) {
         return res.status(200).json({ message: 'Todo is not existed' });
       }
-      const { title } = req.body;
-      const isExist = await Todo.findOne({ title });
-      if (isExist) {
-        return handleError(res, 500, 'Todo allready exsisted');
-      }
       await Todo.findByIdAndUpdate(todoId, req.body);
       res.status(200).json({ message: 'Todo was updated' });
     } catch (error) {
